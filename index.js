@@ -87,7 +87,7 @@ function handleLikes(postsId){
     
     renderImage();
 }
-document.addEventListener('dblclick' ,function(e){
+document.addEventListener('click' ,function(e){
     if(e.target.dataset.like ){
         handleLikes(e.target.dataset.like)
     }
