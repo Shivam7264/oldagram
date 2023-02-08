@@ -67,5 +67,43 @@ for(let i=0;i<posts.length;i+=1){
 postingEl.innerHTML=temp
 }
 renderImage();
-
+//for likes increment on double click and single //
+document.addEventListener('dblclick' ,function(e){
+    if(e.target.dataset.react ){
+        handleLikes(e.target.dataset.react)
+    }
+})
+function handleLikes(postsId){
+    const targetLike=posts.filter(function(likee){
+        return likee.uuid=== postsId
+    })[0]
+    if(targetLike.isLiked){
+        targetLike.likes--
+        targetLike.isLiked=false
+    }else{
+        targetLike.likes++
+        targetLike.isLiked=true
+    }
+    
+    renderImage();
+}
+document.addEventListener('dblclick' ,function(e){
+    if(e.target.dataset.like ){
+        handleLikes(e.target.dataset.like)
+    }
+})
+function handleLikes(postsId){
+    const targetLike=posts.filter(function(likee){
+        return likee.uuid=== postsId
+    })[0]
+    if(targetLike.isLiked){
+        targetLike.likes--
+        targetLike.isLiked=false
+    }else{
+        targetLike.likes++
+        targetLike.isLiked=true
+    }
+    
+    renderImage();
+}
 
