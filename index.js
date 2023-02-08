@@ -52,9 +52,9 @@ for(let i=0;i<posts.length;i+=1){
         </div>
     </div>
     
-    <div class="post-1-image"><img id="post-1"  src="${posts[i].post}"></div>
+    <div class="post-1-image"><img id="post-1"  src="${posts[i].post}" data-react="${posts[i].uuid}"></div>
     <div id="react">
-    <img  class="react-icon" src="images/icon-heart.png">
+    <img  class="react-icon" src="images/icon-heart.png" data-like="${posts[i].uuid}">
     <img  class="react-icon" src="images/icon-comment.png">
     <img class="react-icon" src="images/icon-dm.png">
     </div>
@@ -68,6 +68,8 @@ postingEl.innerHTML=temp
 }
 renderImage();
 //for likes increment on double click and single //
+
+
 document.addEventListener('dblclick' ,function(e){
     if(e.target.dataset.react ){
         handleLikes(e.target.dataset.react)
@@ -87,7 +89,7 @@ function handleLikes(postsId){
     
     renderImage();
 }
-document.addEventListener('click' ,function(e){
+document.addEventListener('Click' ,function(e){
     if(e.target.dataset.like ){
         handleLikes(e.target.dataset.like)
     }
