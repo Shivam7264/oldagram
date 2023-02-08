@@ -69,15 +69,3 @@ postingEl.innerHTML=temp
 renderImage();
 
 
-let postEl=document.getElementsById("post-1")
-
-
-let count=document.getElementById("likes")
-
-
-let heart=document.getElementById("heart")
-heart.addEventListener("click",function(){
-    
-    
-     
-})
